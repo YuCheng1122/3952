@@ -12,28 +12,72 @@ const Index = () => {
           ></img>
         </div>
         <div className="ml-auto flex items-center space-x-2">
-          <div className="text-gray-500 hover:text-gray-700 font-bold text-sm font-mono cursor-pointer">電子週報</div>
-          <div className="text-gray-500 hover:text-gray-700 font-bold text-sm cursor-pointer">焦點議題</div>
+          <div className="text-gray-500 hover:text-gray-700 font-bold text-sm font-mono cursor-pointer">
+            電子週報
+          </div>
+          <div className="text-gray-500 hover:text-gray-700 font-bold text-sm cursor-pointer">
+            焦點議題
+          </div>
         </div>
       </header>
       <main className="bg-blue-300 w-full min-h-screen flex">
         {/* left */}
         <div className="w-[45%] flex">
-          
           {/* 理財電子週報 */}
           <div className="text-white w-[50%] h-full p-3 flex flex-col items-start">
-            
-            <div className="text-lg font-bold shadow-lg my-2 w-full">理財電子週報</div>
-            
+            <div className="text-lg font-bold shadow-lg my-2 w-full">
+              理財電子週報
+            </div>
+
             <div className="text-sm font-semibold my-2">
               偏高之美債殖利率市場震盪
               <br />
               本週聚焦Fed利率會議與發債計畫
             </div>
 
-            <div className="text-[0.65rem] my-2">上週Alphabet, Meta等美股龍頭財報展望XX, 加上以巴衝突加劇及美國公債殖利率震盪後仍維持偏強走勢, 繼續壓xx, 敗為主之全球股市...</div>
-            
-            <div className="bg-white w-full h-[350px]"></div>
+            <div className="text-[0.65rem] my-2">
+              上週Alphabet, Meta等美股龍頭財報展望XX,
+              加上以巴衝突加劇及美國公債殖利率震盪後仍維持偏強走勢, 繼續壓xx,
+              敗為主之全球股市...
+            </div>
+
+            <div className="bg-white w-full h-[350px]">
+              <Chart
+                option={{
+                  grid: { top: "25%", height: "60%" },
+                  title: {
+                    text: "EPS $7.01",
+                    subtext: "2022-01-01",
+                    left: "center",
+                    itemGap: 3,
+                  },
+                  tooltip: {
+                    trigger: "axis",
+
+                    textStyle: {
+                      fontSize: 16,
+                      fontWeight: "bold",
+                    },
+                    left: "right",
+                  },
+                  xAxis: {
+                    type: "category",
+                    data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                  },
+                  yAxis: {
+                    type: "value",
+                  },
+                  series: [
+                    {
+                      data: [150, 230, 224, 218, 135, 147, 260],
+                      type: "line",
+                      lineStyle: { color: "#d5ceeb" },
+                      smooth: true,
+                    },
+                  ],
+                }}
+              />
+            </div>
             <div className="flex w-full justify-between text-white text-xs font-bold my-2">
               <div className="flex items-center text-xs">
                 <img src="sun-emoji.png" className="w-[30px] h-[30px]"></img>
@@ -48,15 +92,18 @@ const Index = () => {
                 礦業
               </div>
             </div>
-            
           </div>
 
           {/* 還想看更多 */}
           <div className="w-[50%] h-full p-3 flex flex-col items-center">
-            <div className="text-white font-bold text-lg shadow-lg w-full mt-2 mb-[20px]">還想看更多...</div>
+            <div className="text-white font-bold text-lg shadow-lg w-full mt-2 mb-[20px]">
+              還想看更多...
+            </div>
             {/* 電子週報 */}
             <div className="flex flex-col items-center w-full my-2">
-              <div className="text-white text-base font-semibold mb-2">電子週報</div>
+              <div className="text-white text-base font-semibold mb-2">
+                電子週報
+              </div>
               <div className="flex justify-between items-center w-full my-1">
                 <div className="w-[10%] h-[20px] bg-white"></div>
                 <div className="w-[80%] text-black text-[0.65rem]">
@@ -87,10 +134,12 @@ const Index = () => {
                   <div className="text-gray-500">2023年11月25日</div>
                 </div>
               </div>
-            </div> 
+            </div>
             {/* 焦點議題 */}
             <div className="flex flex-col items-center w-full my-2">
-              <div className="text-white text-base font-semibold mb-2">焦點議題</div>
+              <div className="text-white text-base font-semibold mb-2">
+                焦點議題
+              </div>
               <div className="flex justify-between items-center w-full my-1">
                 <div className="w-[10%] h-[20px] bg-white"></div>
                 <div className="w-[80%] text-black text-[0.65rem]">
@@ -120,7 +169,6 @@ const Index = () => {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -214,14 +262,106 @@ const Index = () => {
                 </div>
 
                 <div className="flex justify-between mt-2">
-                  <div className="bg-white w-[36%] h-[150px] rounded-md"></div>
-                  <div className="bg-white w-[60%] h-[150px] rounded-md"></div>
+                  <div className="bg-white w-[36%] h-[150px] rounded-md">
+                    <Chart
+                      option={{
+                        tooltip: {
+                          formatter: "{a} <br/>{b} : {c}%",
+                        },
+                        series: [
+                          {
+                            axisLine: {
+                              // 調整仪表盘外圈的厚度
+                              lineStyle: {
+                                width: 10,
+                              },
+                            },
+                            axisTick: {
+                              // 調整刻度的大小
+                              length: 1,
+                            },
+                            name: "Pressure",
+                            type: "gauge",
+                            radius: "75%",
+                            offsetCenter: [0, "20%"],
+                            progress: {
+                              show: true,
+                            },
+                            detail: {
+                              valueAnimation: true,
+                              formatter: "{value}",
+                              fontSize: 1,
+                              offsetCenter: ["50", "100%"], // 調整位置，第一個值是水平偏移，第二個值是垂直偏移
+                            },
+                            data: [
+                              {
+                                value: 50,
+                                name: "SCORE",
+                              },
+                            ],
+                            title: {
+                              offsetCenter: [0, "100%"],
+                            },
+                          },
+                        ],
+                      }}
+                    />
+                  </div>
+
+                  <div className="bg-white w-[60%] h-[150px] rounded-md">
+                    <Chart
+                      option={{
+                        grid: { top: "10%", height: "60%" },
+                        tooltip: {
+                          trigger: "item",
+                        },
+                        legend: {
+                          top: "5%",
+                          left: "center",
+                          // doesn't perfectly work with our tricks, disable it
+                          selectedMode: false,
+                        },
+                        series: [
+                          {
+                            name: "Access From",
+                            type: "pie",
+                            radius: ["40%", "70%"],
+                            center: ["50%", "70%"],
+                            // adjust the start angle
+                            startAngle: 180,
+                            label: {
+                              show: true,
+                              formatter: "{b} ({d}%)",
+                            },
+                            data: [
+                              { value: 1048, name: "Search Engine" },
+                              { value: 735, name: "Direct" },
+                              { value: 580, name: "Email" },
+                              {
+                                // make an record to fill the bottom 50%
+                                value: 1048 + 735 + 580,
+                                itemStyle: {
+                                  // stop the chart from rendering this piece
+                                  color: "none",
+                                  decal: {
+                                    symbol: "none",
+                                  },
+                                },
+                                label: {
+                                  show: true,
+                                },
+                              },
+                            ],
+                          },
+                        ],
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
 
               {/* right */}
               <div className="w-[50%] p-1 flex flex-col items-center justify-around mt-2">
-                
                 <div className="text-xl text-green-600 font-bold">
                   其他投資機會
                 </div>
@@ -278,20 +418,28 @@ const Index = () => {
                       </div>
                     </div>
                   </div>
-
                 </div>
 
                 <div className="flex w-full justify-end">
                   <div className="flex items-center text-xs mx-1">
-                    <img src="sun-emoji.png" className="w-[30px] h-[30px]"></img>
+                    <img
+                      src="sun-emoji.png"
+                      className="w-[30px] h-[30px]"
+                    ></img>
                     正向
                   </div>
                   <div className="flex items-center text-xs mx-1">
-                    <img src="partly-cloudy-day--v1.png" className="w-[30px] h-[30px]"></img>
+                    <img
+                      src="partly-cloudy-day--v1.png"
+                      className="w-[30px] h-[30px]"
+                    ></img>
                     中立
                   </div>
                   <div className="flex items-center text-xs ml-1">
-                    <img src="external-rainny-spring-filled-outline-lima-studio.png" className="w-[30px] h-[30px]"></img>
+                    <img
+                      src="external-rainny-spring-filled-outline-lima-studio.png"
+                      className="w-[30px] h-[30px]"
+                    ></img>
                     保守
                   </div>
                 </div>
@@ -301,10 +449,8 @@ const Index = () => {
                     了解更多
                   </button>
                 </div>
-
               </div>
             </div>
-          
           </div>
         </div>
       </main>
