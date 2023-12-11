@@ -1,4 +1,5 @@
-"use client";
+"use client"
+
 import ReactEcharts from "echarts-for-react";
 
 export default function Chart({ option }) {
