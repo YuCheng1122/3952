@@ -1,3 +1,5 @@
+import Chart from "./components/chart";
+
 const Index = () => {
   return (
     <>
@@ -150,12 +152,58 @@ const Index = () => {
                 <div className="flex justify-between mt-2">
                   <div className="bg-white w-[22%] h-[50px] rounded-md"></div>
                   <div className="bg-white w-[22%] h-[50px] rounded-md"></div>
+
                   <div className="bg-white w-[22%] h-[50px] rounded-md"></div>
                   <div className="bg-white w-[22%] h-[50px] rounded-md"></div>
                 </div>
 
                 <div className="flex justify-between mt-2">
-                  <div className="bg-white w-[60%] h-[150px] rounded-md"></div>
+                  <div className="bg-white w-[60%] h-[150px] rounded-md">
+                    <Chart
+                      option={{
+                        grid: { top: "25%", height: "60%" },
+                        title: {
+                          text: "EPS $7.01",
+                          subtext: "2022-01-01",
+                          left: "center",
+                          itemGap: 3,
+                        },
+                        tooltip: {
+                          trigger: "axis",
+
+                          textStyle: {
+                            fontSize: 16,
+                            fontWeight: "bold",
+                          },
+                          left: "right",
+                        },
+                        xAxis: {
+                          type: "category",
+                          data: [
+                            "Mon",
+                            "Tue",
+                            "Wed",
+                            "Thu",
+                            "Fri",
+                            "Sat",
+                            "Sun",
+                          ],
+                        },
+                        yAxis: {
+                          type: "value",
+                        },
+                        series: [
+                          {
+                            data: [150, 230, 224, 218, 135, 147, 260],
+                            type: "line",
+                            lineStyle: { color: "#d5ceeb" },
+                            smooth: true,
+                          },
+                        ],
+                      }}
+                    />
+                  </div>
+
                   <div className="bg-white w-[36%] h-[150px] rounded-md"></div>
                 </div>
 
