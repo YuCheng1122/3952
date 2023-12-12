@@ -501,4 +501,4 @@ setTimeout(function () {
 setInterval(function () {
   run();
 }, 3000);
-export default Index;
+export default Index;1
