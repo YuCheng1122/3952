@@ -1,6 +1,9 @@
 import Chart from "./components/chart";
-
 const Index = () => {
+  const data = [];
+for (let i = 0; i < 5; ++i) {
+  data.push(Math.round(Math.random() * 200));
+}
   return (
     <>
       <header className="w-full flex items-center py2 px-3">
@@ -44,38 +47,42 @@ const Index = () => {
             <div className="bg-white w-full h-[350px]">
               <Chart
                 option={{
-                  grid: { top: "25%", height: "60%" },
-                  title: {
-                    text: "EPS $7.01",
-                    subtext: "2022-01-01",
-                    left: "center",
-                    itemGap: 3,
-                  },
-                  tooltip: {
-                    trigger: "axis",
-
-                    textStyle: {
-                      fontSize: 16,
-                      fontWeight: "bold",
-                    },
-                    left: "right",
+                  title:{
+                    text:'Q4營收新高',
+                    left:'center',
+                    subtext:'$每百萬元'
                   },
                   xAxis: {
-                    type: "category",
-                    data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
                   },
                   yAxis: {
-                    type: "value",
+                    type: 'category',
+                    data: ['玉山', '緯創', '聯電', '和碩', '華碩'],
+                    inverse: true,
+                    animationDuration: 300,
+                    animationDurationUpdate: 300,
+                    max: 3 // only the largest 3 bars will be displayed
                   },
                   series: [
                     {
-                      data: [150, 230, 224, 218, 135, 147, 260],
-                      type: "line",
-                      lineStyle: { color: "#d5ceeb" },
-                      smooth: true,
-                    },
+                      realtimeSort: true,
+                      name: '',
+                      type: 'bar',
+                      data: data,
+                      label: {
+                        show: true,
+                        position: 'right',
+                        valueAnimation: true
+                      }
+                    }
                   ],
-                }}
+                  legend: {
+                    show: true
+                  },
+                  animationDuration: 0,
+                  animationDurationUpdate: 3000,
+                  animationEasing: 'linear',
+                  animationEasingUpdate: 'linear'
+                  }}
               />
             </div>
             <div className="flex w-full justify-between text-white text-xs font-bold my-2">
@@ -198,7 +205,8 @@ const Index = () => {
                 </div>
 
                 <div className="flex justify-between mt-2">
-                  <div className="bg-white w-[22%] h-[50px] rounded-md"></div>
+                  <div className="bg-white w-[22%] h-[50px] rounded-md text-black text-sm ">遠傳</div>
+                  
                   <div className="bg-white w-[22%] h-[50px] rounded-md"></div>
 
                   <div className="bg-white w-[22%] h-[50px] rounded-md"></div>
@@ -252,7 +260,8 @@ const Index = () => {
                     />
                   </div>
 
-                  <div className="bg-white w-[36%] h-[150px] rounded-md"></div>
+                  <div className="bg-white w-[36%] h-[150px] rounded-md">
+                  </div>
                 </div>
 
                 <div className="flex justify-between mt-2">
@@ -265,45 +274,56 @@ const Index = () => {
                   <div className="bg-white w-[36%] h-[150px] rounded-md">
                     <Chart
                       option={{
-                        tooltip: {
-                          formatter: "{a} <br/>{b} : {c}%",
-                        },
                         series: [
                           {
-                            axisLine: {
-                              // 調整仪表盘外圈的厚度
-                              lineStyle: {
-                                width: 10,
-                              },
-                            },
-                            axisTick: {
-                              // 調整刻度的大小
-                              length: 1,
-                            },
-                            name: "Pressure",
-                            type: "gauge",
-                            radius: "75%",
-                            offsetCenter: [0, "20%"],
+                            type: 'gauge',
                             progress: {
                               show: true,
+                              width: 18
+                            },
+                            axisLine: {
+                              lineStyle: {
+                                width: 18
+                              }
+                            },
+                            axisTick: {
+                              show: false
+                            },
+                            splitLine: {
+                              length: 15,
+                              lineStyle: {
+                                width: 2,
+                                color: '#999'
+                              }
+                            },
+                            axisLabel: {
+                              distance: 25,
+                              color: '#999',
+                              fontSize: 5
+                            },
+                            anchor: {
+                              show: true,
+                              showAbove: true,
+                              size: 10,
+                              itemStyle: {
+                                borderWidth: 10
+                              }
+                            },
+                            title: {
+                              show: false
                             },
                             detail: {
                               valueAnimation: true,
-                              formatter: "{value}",
-                              fontSize: 1,
-                              offsetCenter: ["50", "100%"], // 調整位置，第一個值是水平偏移，第二個值是垂直偏移
+                              fontSize: 10,
+                              offsetCenter: [0, '70%']
                             },
                             data: [
                               {
-                                value: 50,
-                                name: "SCORE",
-                              },
-                            ],
-                            title: {
-                              offsetCenter: [0, "100%"],
-                            },
-                          },
-                        ],
+                                value: 70
+                              }
+                            ]
+                          }
+                        ]
                       }}
                     />
                   </div>
@@ -457,5 +477,27 @@ const Index = () => {
     </>
   );
 };
-
+function run() {
+  for (var i = 0; i < data.length; ++i) {
+    if (Math.random() > 0.9) {
+      data[i] += Math.round(Math.random() * 2000);
+    } else {
+      data[i] += Math.round(Math.random() * 200);
+    }
+  }
+  myChart.setOption({
+    series: [
+      {
+        type: 'bar',
+        data
+      }
+    ]
+  });
+}
+setTimeout(function () {
+  run();
+}, 0);
+setInterval(function () {
+  run();
+}, 3000);
 export default Index;
