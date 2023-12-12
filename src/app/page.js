@@ -1,4 +1,5 @@
 import Chart from "./components/chart";
+
 const Index = () => {
   const data = [];
 for (let i = 0; i < 5; ++i) {
