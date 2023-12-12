@@ -1,7 +1,7 @@
 import Chart from "./components/chart";
 
 const Index = () => {
-  const data = [];
+  const data =[];
 for (let i = 0; i < 5; ++i) {
   data.push(Math.round(Math.random() * 200));
 }
@@ -206,12 +206,18 @@ for (let i = 0; i < 5; ++i) {
                 </div>
 
                 <div className="flex justify-between mt-2">
-                  <div className="bg-white w-[22%] h-[50px] rounded-md text-black text-sm ">遠傳</div>
+                  <div className="bg-white w-[25%] h-[50px] rounded-md text-black text-sm ">遠傳Q2 營收
+                  <div className='text-lg test-bold'>$2322億</div>
+                  </div>
                   
-                  <div className="bg-white w-[22%] h-[50px] rounded-md"></div>
+                  <div className="bg-white w-[22%] h-[50px] rounded-md text-sm">和碩Q3 
+                  <div>營收YoY下降3%</div> </div>
 
-                  <div className="bg-white w-[22%] h-[50px] rounded-md"></div>
-                  <div className="bg-white w-[22%] h-[50px] rounded-md"></div>
+                  <div className="bg-white w-[22%] h-[50px] rounded-md">中光電<div className="text-sm">
+                    年減2-3成</div></div>
+                  <div className="bg-white w-[22%] h-[50px] rounded-md text-sm">台積電法說會<div className="text-sm">預估年減4%</div></div><div>
+                    
+                  </div>
                 </div>
 
                 <div className="flex justify-between mt-2">
@@ -262,13 +268,128 @@ for (let i = 0; i < 5; ++i) {
                   </div>
 
                   <div className="bg-white w-[36%] h-[150px] rounded-md">
-                  </div>
-                </div>
+                    <Chart
+                    option={{
+                      title:{
+                        text:'營收$4090億',
+                        subtext:''
+                      },
+                      grid:{left:'20%',top:'25%',height:'60%'},
+                     xAxis: {
+                      type: 'category',
+                      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+                    },
+                    yAxis: {
+                      type: 'value'
+                    },
+                    series: [
+                      {
+                        data: [120, 200, 150, 80, 70],
+                        type: 'bar'
+                      }
+                    ]
+                    }}/>
+                  
+                </div></div>
 
                 <div className="flex justify-between mt-2">
-                  <div className="bg-white w-[32%] h-[150px] rounded-md"></div>
-                  <div className="bg-white w-[32%] h-[150px] rounded-md"></div>
-                  <div className="bg-white w-[32%] h-[150px] rounded-md"></div>
+                  <div className="bg-white w-[32%] h-[150px] rounded-md">
+                  <Chart
+                    option={{
+                      title:{
+                        text:'$4090億資本支出',
+                        itemGap:'1'
+                      },
+                      grid:{left:'20%',top:'25%',height:'60%'},
+                     xAxis: {
+                      type: 'category',
+                      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+                    },
+                    yAxis: {
+                      type: 'value'
+                    },
+                    series: [
+                      {
+                        data: [120, 200, 150, 80, 70],
+                        type: 'bar'
+                      }
+                    ]
+                    }}/>
+                  </div>
+                  <div className="bg-white w-[32%] h-[150px] rounded-md">
+                    <Chart
+                    option={{
+                      title: {
+                        text: '產業分析',
+                        left: 'center',
+                        textStyle:{fontSize:15},
+                      },
+                      grid:{top:'60',height:'500'},
+                      
+                      tooltip: {
+                        trigger: 'item'
+                      },
+                      series: [
+                        {
+                          name: 'Pie',
+                          type: 'pie',
+                          radius: '50%',
+                          data: [
+                            { value: 1048, name: 'Search Engine' },
+                            { value: 735, name: 'Direct' },
+                            { value: 580, name: 'Email' },
+                            { value: 484, name: 'Union Ads' },
+                            { value: 300, name: 'Video Ads' }
+                          ],
+                          emphasis: {
+                            itemStyle: {
+                              shadowBlur: 10,
+                              shadowOffsetX: 0,
+                              shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                          }
+                        }
+                      ]
+                    }}
+                    />
+                  </div>
+                  <div className="bg-white w-[32%] h-[150px] rounded-md">
+                    <Chart
+                    option={{
+                      title: {
+                        text: '營收占比',
+                        left: 'center',
+                        textStyle:{fontSize:15},
+                      },
+                      grid:{top:'60',height:'500'},
+                      
+                      tooltip: {
+                        trigger: 'item'
+                      },
+                      series: [
+                        {
+                          name: 'Pie',
+                          type: 'pie',
+                          radius: '50%',
+                          data: [
+                            { value: 1048, name: 'Search Engine' },
+                            { value: 735, name: 'Direct' },
+                            { value: 580, name: 'Email' },
+                            { value: 484, name: 'Union Ads' },
+                            { value: 300, name: 'Video Ads' }
+                          ],
+                          emphasis: {
+                            itemStyle: {
+                              shadowBlur: 10,
+                              shadowOffsetX: 0,
+                              shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                          }
+                        }
+                      ]
+                    }}
+                    />
+                  </div>
                 </div>
 
                 <div className="flex justify-between mt-2">
@@ -478,27 +599,5 @@ for (let i = 0; i < 5; ++i) {
     </>
   );
 };
-function run() {
-  for (var i = 0; i < data.length; ++i) {
-    if (Math.random() > 0.9) {
-      data[i] += Math.round(Math.random() * 2000);
-    } else {
-      data[i] += Math.round(Math.random() * 200);
-    }
-  }
-  myChart.setOption({
-    series: [
-      {
-        type: 'bar',
-        data
-      }
-    ]
-  });
-}
-setTimeout(function () {
-  run();
-}, 0);
-setInterval(function () {
-  run();
-}, 3000);
-export default Index;1
+
+export default Index;
