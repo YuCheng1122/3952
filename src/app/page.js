@@ -24,6 +24,7 @@ for (let i = 0; i < 5; ++i) {
           </div>
         </div>
       </header>
+
       <main className="bg-blue-300 w-full min-h-screen flex">
         {/* left */}
         <div className="w-[45%] flex">
@@ -45,45 +46,51 @@ for (let i = 0; i < 5; ++i) {
               敗為主之全球股市...
             </div>
 
-            <div className="bg-white w-full h-[350px]">
-              <Chart
-                option={{
-                  title:{
-                    text:'Q4營收新高',
-                    left:'center',
-                    subtext:'$每百萬元'
+            <div className="bg-white w-full h-[400px] p-3 rounded-md">
+              <Chart 
+              option={{
+                title:{
+                  text:'Q4營收新高',
+                  left:'center',
+                  subtext:'$每百萬元',
+                  textStyle: {
+                    fontSize: 14, 
                   },
-                  xAxis: {
-                  },
-                  yAxis: {
-                    type: 'category',
-                    data: ['玉山', '緯創', '聯電', '和碩', '華碩'],
-                    inverse: true,
-                    animationDuration: 300,
-                    animationDurationUpdate: 300,
-                    max: 3 // only the largest 3 bars will be displayed
-                  },
-                  series: [
-                    {
-                      realtimeSort: true,
-                      name: '',
-                      type: 'bar',
-                      data: data,
-                      label: {
-                        show: true,
-                        position: 'right',
-                        valueAnimation: true
-                      }
+                },
+                xAxis: {
+                },
+                yAxis: {
+                  type: 'category',
+                  data: ['玉山', '緯創', '聯電', '和碩', '華碩'],
+                  inverse: true,
+                  animationDuration: 300,
+                  animationDurationUpdate: 300,
+                  max: 3,  // only the largest 3 bars will be displayed
+                  axisLabel: {
+                    fontSize: 10, // Y轴刻度文字大小
+                  }
+                },
+                series: [
+                  {
+                    realtimeSort: true,
+                    name: '',
+                    type: 'bar',
+                    data: data,
+                    label: {
+                      show: true,
+                      position: 'right',
+                      valueAnimation: true
                     }
-                  ],
-                  legend: {
-                    show: true
-                  },
-                  animationDuration: 0,
-                  animationDurationUpdate: 3000,
-                  animationEasing: 'linear',
-                  animationEasingUpdate: 'linear'
-                  }}
+                  }
+                ],
+                legend: {
+                  show: true
+                },
+                animationDuration: 0,
+                animationDurationUpdate: 3000,
+                animationEasing: 'linear',
+                animationEasingUpdate: 'linear'
+              }}
               />
             </div>
             <div className="flex w-full justify-between text-white text-xs font-bold my-2">
@@ -113,30 +120,31 @@ for (let i = 0; i < 5; ++i) {
                 電子週報
               </div>
               <div className="flex justify-between items-center w-full my-1">
-                <div className="w-[10%] h-[20px] bg-white"></div>
-                <div className="w-[80%] text-black text-[0.65rem]">
+                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225250.png"></img>
+                {/* <div className="w-[10%] h-[20px] bg-white"></div> */}
+                <div className="w-[75%] text-black text-[0.65rem]">
                   金融占台股市值比僅次半導體 GDP貢獻12年來近零成長
                   <div className="text-gray-500">2023年11月26日</div>
                 </div>
               </div>
               <div className="flex justify-between items-center w-full my-1">
-                <div className="w-[10%] h-[20px] bg-white"></div>
-                <div className="w-[80%] text-black text-[0.65rem]">
+                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225337.png"></img>
+                <div className="w-[75%] text-black text-[0.65rem]">
                   台積電賺很多股價「要死不活」 反觀死敵噴漲30％ 驚爆2大弱點
                   <div className="text-gray-500">2023年11月24日</div>
                 </div>
               </div>
               <div className="flex justify-between items-center w-full my-1">
-                <div className="w-[10%] h-[20px] bg-white"></div>
-                <div className="w-[80%] text-black text-[0.65rem]">
+                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225403.png"></img>
+                <div className="w-[75%] text-black text-[0.65rem]">
                   Nvidia beats TSMC and Intel to take top chip industry revenue
                   crown for the first time
                   <div className="text-gray-500">2023年11月24日</div>
                 </div>
               </div>
               <div className="flex justify-between items-center w-full my-1">
-                <div className="w-[10%] h-[20px] bg-white"></div>
-                <div className="w-[80%] text-black text-[0.65rem]">
+                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225429.png"></img>
+                <div className="w-[75%] text-black text-[0.65rem]">
                   TSMC (TSM) Stock Declines While Market Improves: Some
                   Information for Investors
                   <div className="text-gray-500">2023年11月25日</div>
@@ -149,29 +157,29 @@ for (let i = 0; i < 5; ++i) {
                 焦點議題
               </div>
               <div className="flex justify-between items-center w-full my-1">
-                <div className="w-[10%] h-[20px] bg-white"></div>
-                <div className="w-[80%] text-black text-[0.65rem]">
+                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225250.png"></img>
+                <div className="w-[75%] text-black text-[0.65rem]">
                   快刪掉！17款「安卓APP」會偷錢 超過1200萬人下載
                   <div className="text-gray-500">2023年12月10日</div>
                 </div>
               </div>
               <div className="flex justify-between items-center w-full my-1">
-                <div className="w-[10%] h-[20px] bg-white"></div>
-                <div className="w-[80%] text-black text-[0.65rem]">
+                <img className="w-[20%] rounded-sm" src="Screenshot 2023-12-12 225506.png"></img>
+                <div className="w-[75%] text-black text-[0.65rem]">
                   快更新！一鍵優化Google Pixel 8遊戲效能 玩《原神》更順了
                   <div className="text-gray-500">2023年12月10日</div>
                 </div>
               </div>
               <div className="flex justify-between items-center w-full my-1">
-                <div className="w-[10%] h-[20px] bg-white"></div>
-                <div className="w-[80%] text-black text-[0.65rem]">
+                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225403.png"></img>
+                <div className="w-[75%] text-black text-[0.65rem]">
                   高盛打臉降息! ? SOFR訊號亦透漏短線債券超漲| Anue鉅亨- 專家觀點
                   <div className="text-gray-500">2023年12月10日</div>
                 </div>
               </div>
               <div className="flex justify-between items-center w-full my-1">
-                <div className="w-[10%] h-[20px] bg-white"></div>
-                <div className="w-[80%] text-black text-[0.65rem]">
+                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225451.png"></img>
+                <div className="w-[75%] text-black text-[0.65rem]">
                   年底買車注意「年份、年式」 德系車1年恐差「這金額」
                   <div className="text-gray-500">2023年12月10日</div>
                 </div>
@@ -195,7 +203,7 @@ for (let i = 0; i < 5; ++i) {
 
             <div className="w-full flex">
               {/* left */}
-              <div className="w-[50%] p-1 mt-2">
+              <div className="w-[60%] p-1 mt-2">
                 <div className="flex justify-between items-center mt-5">
                   <div className="text-black text-sm">台積電2330 23Q2</div>
                   <input
@@ -206,22 +214,26 @@ for (let i = 0; i < 5; ++i) {
                 </div>
 
                 <div className="flex justify-between mt-2">
-                  <div className="bg-white w-[25%] h-[50px] rounded-md text-black text-sm ">遠傳Q2 營收
-                  <div className='text-lg test-bold'>$2322億</div>
+                  <div className="bg-white w-[23%] h-[60px] rounded-md text-black p-1 flex flex-col items-center justify-center">
+                    <div className="text-xs">遠傳Q2 營收</div>
+                    <div className='text-[0.65rem] font-bold'>$2322億</div>
                   </div>
-                  
-                  <div className="bg-white w-[22%] h-[50px] rounded-md text-sm">和碩Q3 
-                  <div>營收YoY下降3%</div> </div>
-
-                  <div className="bg-white w-[22%] h-[50px] rounded-md">中光電<div className="text-sm">
-                    年減2-3成</div></div>
-                  <div className="bg-white w-[22%] h-[50px] rounded-md text-sm">台積電法說會<div className="text-sm">預估年減4%</div></div><div>
-                    
+                  <div className="bg-white w-[23%] h-[60px] rounded-md text-black p-1 flex flex-col items-center justify-center">
+                    <div className="text-xs">和碩Q3</div>
+                    <div className='text-[0.65rem] font-bold'>營收YoY下降3%</div>
+                  </div>
+                  <div className="bg-white w-[23%] h-[60px] rounded-md text-black p-1 flex flex-col items-center justify-center">
+                    <div className="text-xs">中光電</div>
+                    <div className="text-[0.65rem] font-bold">年減2-3成</div>
+                  </div>
+                  <div className="bg-white w-[23%] h-[60px] rounded-md text-black p-1 flex flex-col items-center justify-center"> 
+                    <div className="text-xs">台積電法說會</div>
+                    <div className="text-[0.65rem] font-bold">預估年減4%</div>
                   </div>
                 </div>
 
                 <div className="flex justify-between mt-2">
-                  <div className="bg-white w-[60%] h-[150px] rounded-md">
+                  <div className="bg-white w-[60%] h-[175px] rounded-md">
                     <Chart
                       option={{
                         grid: { top: "25%", height: "60%" },
@@ -230,10 +242,15 @@ for (let i = 0; i < 5; ++i) {
                           subtext: "2022-01-01",
                           left: "center",
                           itemGap: 3,
+                          textStyle: {
+                            fontSize: 12, 
+                          },
+                          subtextStyle: {
+                            fontSize: 10, 
+                          }
                         },
                         tooltip: {
                           trigger: "axis",
-
                           textStyle: {
                             fontSize: 16,
                             fontWeight: "bold",
@@ -251,9 +268,15 @@ for (let i = 0; i < 5; ++i) {
                             "Sat",
                             "Sun",
                           ],
+                          axisLabel: {
+                            fontSize: 9, 
+                          }
                         },
                         yAxis: {
                           type: "value",
+                          axisLabel: {
+                            fontSize: 9, 
+                          }
                         },
                         series: [
                           {
@@ -267,46 +290,70 @@ for (let i = 0; i < 5; ++i) {
                     />
                   </div>
 
-                  <div className="bg-white w-[36%] h-[150px] rounded-md">
+                  <div className="bg-white w-[36%] h-[175px] rounded-md">
                     <Chart
                     option={{
                       title:{
                         text:'營收$4090億',
-                        subtext:''
+                        subtext:'',
+                        textStyle: {
+                          fontSize: 12, 
+                        },
+                        subtextStyle: {
+                          fontSize: 10, 
+                        }
                       },
                       grid:{left:'20%',top:'25%',height:'60%'},
-                     xAxis: {
-                      type: 'category',
-                      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
-                    },
-                    yAxis: {
-                      type: 'value'
-                    },
-                    series: [
-                      {
-                        data: [120, 200, 150, 80, 70],
-                        type: 'bar'
-                      }
+                      xAxis: {
+                        type: 'category',
+                        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                        axisLabel: {
+                          fontSize: 9, 
+                        }
+                      },
+                      yAxis: {
+                        type: 'value',
+                        axisLabel: {
+                          fontSize: 9, 
+                        }
+                      },
+                      series: [
+                        {
+                          data: [120, 200, 150, 80, 70],
+                          type: 'bar'
+                        }
                     ]
                     }}/>
                   
                 </div></div>
 
                 <div className="flex justify-between mt-2">
-                  <div className="bg-white w-[32%] h-[150px] rounded-md">
+                  <div className="bg-white w-[32%] h-[175px] rounded-md p-2">
                   <Chart
                     option={{
                       title:{
                         text:'$4090億資本支出',
-                        itemGap:'1'
+                        itemGap:'1',
+                        textStyle: {
+                          fontSize: 12, 
+                        },
+                        subtextStyle: {
+                          fontSize: 10, 
+                        }
                       },
                       grid:{left:'20%',top:'25%',height:'60%'},
-                     xAxis: {
+                      xAxis: {
                       type: 'category',
-                      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+                      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                      axisLabel: {
+                        fontSize: 9, 
+                      }
                     },
                     yAxis: {
-                      type: 'value'
+                      type: 'value',
+                      axisLabel: {
+                        fontSize: 9, 
+                      }
                     },
                     series: [
                       {
@@ -316,13 +363,18 @@ for (let i = 0; i < 5; ++i) {
                     ]
                     }}/>
                   </div>
-                  <div className="bg-white w-[32%] h-[150px] rounded-md">
+                  <div className="bg-white w-[32%] h-[175px] rounded-md">
                     <Chart
                     option={{
                       title: {
                         text: '產業分析',
                         left: 'center',
-                        textStyle:{fontSize:15},
+                        textStyle: {
+                          fontSize: 12, 
+                        },
+                        subtextStyle: {
+                          fontSize: 10, 
+                        }
                       },
                       grid:{top:'60',height:'500'},
                       
@@ -353,13 +405,18 @@ for (let i = 0; i < 5; ++i) {
                     }}
                     />
                   </div>
-                  <div className="bg-white w-[32%] h-[150px] rounded-md">
+                  <div className="bg-white w-[32%] h-[175px] rounded-md">
                     <Chart
                     option={{
                       title: {
                         text: '營收占比',
                         left: 'center',
-                        textStyle:{fontSize:15},
+                        textStyle: {
+                          fontSize: 12, 
+                        },
+                        subtextStyle: {
+                          fontSize: 10, 
+                        }
                       },
                       grid:{top:'60',height:'500'},
                       
@@ -393,7 +450,7 @@ for (let i = 0; i < 5; ++i) {
                 </div>
 
                 <div className="flex justify-between mt-2">
-                  <div className="bg-white w-[36%] h-[150px] rounded-md">
+                  <div className="bg-white w-[36%] h-[175px] rounded-md">
                     <Chart
                       option={{
                         series: [
@@ -432,7 +489,7 @@ for (let i = 0; i < 5; ++i) {
                               }
                             },
                             title: {
-                              show: false
+                              show: false,
                             },
                             detail: {
                               valueAnimation: true,
@@ -450,7 +507,7 @@ for (let i = 0; i < 5; ++i) {
                     />
                   </div>
 
-                  <div className="bg-white w-[60%] h-[150px] rounded-md">
+                  <div className="bg-white w-[60%] h-[175px] rounded-md">
                     <Chart
                       option={{
                         grid: { top: "10%", height: "60%" },
@@ -503,7 +560,7 @@ for (let i = 0; i < 5; ++i) {
               </div>
 
               {/* right */}
-              <div className="w-[50%] p-1 flex flex-col items-center justify-around mt-2">
+              <div className="w-[40%] p-1 flex flex-col items-center justify-around mt-2">
                 <div className="text-xl text-green-600 font-bold">
                   其他投資機會
                 </div>
