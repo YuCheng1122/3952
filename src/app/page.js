@@ -167,12 +167,13 @@ const Index = () => {
             </div>
             {/* 焦點議題 */}
             <div className="flex flex-col items-center w-full my-2"></div>
-              <div className="text-white text-base font-semibold mb-2">投資機器人</div>
-              <div className="py-2 bg-white w-full rounded-md"></div>
+            <div className="text-white text-base font-semibold mb-2">
+              投資機器人
+            </div>
+            <div className="py-2 bg-white w-full rounded-md"></div>
             <Chat />
           </div>
         </div>
-        
 
         {/* right */}
         <div className="w-[55%] flex justify-center">
@@ -357,7 +358,7 @@ const Index = () => {
                     <Chart
                       option={{
                         title: {
-                          text: "產業分析",
+                          text: "獲利貢獻(%)",
                           left: "center",
                           textStyle: {
                             fontSize: 12,
@@ -377,11 +378,9 @@ const Index = () => {
                             type: "pie",
                             radius: "50%",
                             data: [
-                              { value: 1048, name: "Search Engine" },
-                              { value: 735, name: "Direct" },
-                              { value: 580, name: "Email" },
-                              { value: 484, name: "Union Ads" },
-                              { value: 300, name: "Video Ads" },
+                              { value: 93.2, name: "銀行業務" },
+                              { value: 6.3, name: "證券業務" },
+                              { value: 0.5, name: "創投業務" },
                             ],
                             emphasis: {
                               itemStyle: {
@@ -399,7 +398,7 @@ const Index = () => {
                     <Chart
                       option={{
                         title: {
-                          text: "營收占比",
+                          text: "淨收益結構(%)",
                           left: "center",
                           textStyle: {
                             fontSize: 12,
@@ -419,11 +418,9 @@ const Index = () => {
                             type: "pie",
                             radius: "50%",
                             data: [
-                              { value: 1048, name: "Search Engine" },
-                              { value: 735, name: "Direct" },
-                              { value: 580, name: "Email" },
-                              { value: 484, name: "Union Ads" },
-                              { value: 300, name: "Video Ads" },
+                              { value: 54, name: "淨利息收益" },
+                              { value: 35.2, name: "手續費收益" },
+                              { value: 10.8, name: "固定收益及其他" },
                             ],
                             emphasis: {
                               itemStyle: {
@@ -512,23 +509,23 @@ const Index = () => {
                         },
                         series: [
                           {
-                            name: "Access From",
+                            name: "手續費收入",
                             type: "pie",
                             radius: ["40%", "70%"],
                             center: ["50%", "70%"],
-                            // adjust the start angle
+                            title: "手續費收入",
                             startAngle: 180,
                             label: {
                               show: true,
                               formatter: "{b} ({d}%)",
                             },
                             data: [
-                              { value: 1048, name: "Search Engine" },
-                              { value: 735, name: "Direct" },
-                              { value: 580, name: "Email" },
+                              { value: 41, name: "財富管理" },
+                              { value: 33, name: "信用卡業務" },
+                              { value: 11.4, name: "信用卡業務年成長" },
                               {
                                 // make an record to fill the bottom 50%
-                                value: 1048 + 735 + 580,
+                                value: 100,
                                 itemStyle: {
                                   // stop the chart from rendering this piece
                                   color: "none",
