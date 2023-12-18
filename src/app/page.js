@@ -1,10 +1,11 @@
 import Chart from "./components/chart";
+import Chat from "./components/chat";
 
 const Index = () => {
-  const data =[];
-for (let i = 0; i < 5; ++i) {
-  data.push(Math.round(Math.random() * 200));
-}
+  const data = [];
+  for (let i = 0; i < 5; ++i) {
+    data.push(Math.round(Math.random() * 200));
+  }
   return (
     <>
       <header className="w-full flex items-center py2 px-3">
@@ -47,64 +48,65 @@ for (let i = 0; i < 5; ++i) {
             </div>
 
             <div className="bg-white w-full h-[400px] p-3 rounded-md">
-              <Chart 
-              option={{
-                title:{
-                  text:'Q4營收新高',
-                  left:'center',
-                  subtext:'$每百萬元',
-                  textStyle: {
-                    fontSize: 14, 
+              <Chart
+                option={{
+                  title: {
+                    text: "玉山新聞情緒分析模型",
                   },
-                },
-                xAxis: {
-                },
-                yAxis: {
-                  type: 'category',
-                  data: ['玉山', '緯創', '聯電', '和碩', '華碩'],
-                  inverse: true,
-                  animationDuration: 300,
-                  animationDurationUpdate: 300,
-                  max: 3,  // only the largest 3 bars will be displayed
-                  axisLabel: {
-                    fontSize: 10, // Y轴刻度文字大小
-                  }
-                },
-                series: [
-                  {
-                    realtimeSort: true,
-                    name: '',
-                    type: 'bar',
-                    data: data,
-                    label: {
-                      show: true,
-                      position: 'right',
-                      valueAnimation: true
-                    }
-                  }
-                ],
-                legend: {
-                  show: true
-                },
-                animationDuration: 0,
-                animationDurationUpdate: 3000,
-                animationEasing: 'linear',
-                animationEasingUpdate: 'linear'
-              }}
+                  legend: {
+                    data: ["情緒分數"],
+                    left: "right",
+                  },
+                  tooltip: {
+                    show: true,
+                  },
+                  radar: {
+                    // shape: 'circle',
+                    indicator: [
+                      {
+                        name: "新聞一",
+                        max: 6500,
+                      },
+                      { name: "新聞二", max: 1 },
+                      { name: "新聞三", max: 1 },
+                      { name: "新聞四", max: 1 },
+                      { name: "新聞五", max: 1 },
+                      { name: "新聞六", max: 1 },
+                    ],
+                  },
+                  series: [
+                    {
+                      name: "Budget vs spending",
+                      type: "radar",
+                      data: [
+                        {
+                          value: [0.5, 0.7, 0.4, -0.2, 0.7, 0.8],
+                          name: "情緒分數",
+                        },
+                      ],
+                    },
+                  ],
+                }}
               />
             </div>
             <div className="flex w-full justify-between text-white text-xs font-bold my-2">
               <div className="flex items-center text-xs">
                 <img src="sun-emoji.png" className="w-[30px] h-[30px]"></img>
-                科技
+                正向
               </div>
               <div className="flex items-center text-xs">
-                <img src="sun-emoji.png" className="w-[30px] h-[30px]"></img>
-                能源
+                <img
+                  src="partly-cloudy-day--v1.png"
+                  className="w-[30px] h-[30px]"
+                ></img>
+                中性
               </div>
               <div className="flex items-center text-xs">
-                <img src="sun-emoji.png" className="w-[30px] h-[30px]"></img>
-                礦業
+                <img
+                  src="external-rainny-spring-filled-outline-lima-studio.png"
+                  className="w-[30px] h-[30px]"
+                ></img>
+                負面
               </div>
             </div>
           </div>
@@ -120,7 +122,10 @@ for (let i = 0; i < 5; ++i) {
                 電子週報
               </div>
               <div className="flex justify-between items-center w-full my-1">
-                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225250.png"></img>
+                <img
+                  className="w-[20%] rounded-sm"
+                  src="/Screenshot 2023-12-12 225250.png"
+                ></img>
                 {/* <div className="w-[10%] h-[20px] bg-white"></div> */}
                 <div className="w-[75%] text-black text-[0.65rem]">
                   金融占台股市值比僅次半導體 GDP貢獻12年來近零成長
@@ -128,14 +133,20 @@ for (let i = 0; i < 5; ++i) {
                 </div>
               </div>
               <div className="flex justify-between items-center w-full my-1">
-                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225337.png"></img>
+                <img
+                  className="w-[20%] rounded-sm"
+                  src="/Screenshot 2023-12-12 225337.png"
+                ></img>
                 <div className="w-[75%] text-black text-[0.65rem]">
                   台積電賺很多股價「要死不活」 反觀死敵噴漲30％ 驚爆2大弱點
                   <div className="text-gray-500">2023年11月24日</div>
                 </div>
               </div>
               <div className="flex justify-between items-center w-full my-1">
-                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225403.png"></img>
+                <img
+                  className="w-[20%] rounded-sm"
+                  src="/Screenshot 2023-12-12 225403.png"
+                ></img>
                 <div className="w-[75%] text-black text-[0.65rem]">
                   Nvidia beats TSMC and Intel to take top chip industry revenue
                   crown for the first time
@@ -143,7 +154,10 @@ for (let i = 0; i < 5; ++i) {
                 </div>
               </div>
               <div className="flex justify-between items-center w-full my-1">
-                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225429.png"></img>
+                <img
+                  className="w-[20%] rounded-sm"
+                  src="/Screenshot 2023-12-12 225429.png"
+                ></img>
                 <div className="w-[75%] text-black text-[0.65rem]">
                   TSMC (TSM) Stock Declines While Market Improves: Some
                   Information for Investors
@@ -152,39 +166,11 @@ for (let i = 0; i < 5; ++i) {
               </div>
             </div>
             {/* 焦點議題 */}
-            <div className="flex flex-col items-center w-full my-2">
-              <div className="text-white text-base font-semibold mb-2">
-                焦點議題
-              </div>
-              <div className="flex justify-between items-center w-full my-1">
-                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225250.png"></img>
-                <div className="w-[75%] text-black text-[0.65rem]">
-                  快刪掉！17款「安卓APP」會偷錢 超過1200萬人下載
-                  <div className="text-gray-500">2023年12月10日</div>
-                </div>
-              </div>
-              <div className="flex justify-between items-center w-full my-1">
-                <img className="w-[20%] rounded-sm" src="Screenshot 2023-12-12 225506.png"></img>
-                <div className="w-[75%] text-black text-[0.65rem]">
-                  快更新！一鍵優化Google Pixel 8遊戲效能 玩《原神》更順了
-                  <div className="text-gray-500">2023年12月10日</div>
-                </div>
-              </div>
-              <div className="flex justify-between items-center w-full my-1">
-                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225403.png"></img>
-                <div className="w-[75%] text-black text-[0.65rem]">
-                  高盛打臉降息! ? SOFR訊號亦透漏短線債券超漲| Anue鉅亨- 專家觀點
-                  <div className="text-gray-500">2023年12月10日</div>
-                </div>
-              </div>
-              <div className="flex justify-between items-center w-full my-1">
-                <img className="w-[20%] rounded-sm" src="/Screenshot 2023-12-12 225451.png"></img>
-                <div className="w-[75%] text-black text-[0.65rem]">
-                  年底買車注意「年份、年式」 德系車1年恐差「這金額」
-                  <div className="text-gray-500">2023年12月10日</div>
-                </div>
-              </div>
-            </div>
+            <div className="flex flex-col items-center w-full my-2"></div>
+            <header className="App-header">
+              <h1 style={{ textAlign: "center" }}>投資機器人</h1>
+            </header>
+            <Chat />
           </div>
         </div>
 
@@ -216,17 +202,19 @@ for (let i = 0; i < 5; ++i) {
                 <div className="flex justify-between mt-2">
                   <div className="bg-white w-[23%] h-[60px] rounded-md text-black p-1 flex flex-col items-center justify-center">
                     <div className="text-xs">遠傳Q2 營收</div>
-                    <div className='text-[0.65rem] font-bold'>$2322億</div>
+                    <div className="text-[0.65rem] font-bold">$2322億</div>
                   </div>
                   <div className="bg-white w-[23%] h-[60px] rounded-md text-black p-1 flex flex-col items-center justify-center">
                     <div className="text-xs">和碩Q3</div>
-                    <div className='text-[0.65rem] font-bold'>營收YoY下降3%</div>
+                    <div className="text-[0.65rem] font-bold">
+                      營收YoY下降3%
+                    </div>
                   </div>
                   <div className="bg-white w-[23%] h-[60px] rounded-md text-black p-1 flex flex-col items-center justify-center">
                     <div className="text-xs">中光電</div>
                     <div className="text-[0.65rem] font-bold">年減2-3成</div>
                   </div>
-                  <div className="bg-white w-[23%] h-[60px] rounded-md text-black p-1 flex flex-col items-center justify-center"> 
+                  <div className="bg-white w-[23%] h-[60px] rounded-md text-black p-1 flex flex-col items-center justify-center">
                     <div className="text-xs">台積電法說會</div>
                     <div className="text-[0.65rem] font-bold">預估年減4%</div>
                   </div>
@@ -243,11 +231,11 @@ for (let i = 0; i < 5; ++i) {
                           left: "center",
                           itemGap: 3,
                           textStyle: {
-                            fontSize: 12, 
+                            fontSize: 12,
                           },
                           subtextStyle: {
-                            fontSize: 10, 
-                          }
+                            fontSize: 10,
+                          },
                         },
                         tooltip: {
                           trigger: "axis",
@@ -269,14 +257,14 @@ for (let i = 0; i < 5; ++i) {
                             "Sun",
                           ],
                           axisLabel: {
-                            fontSize: 9, 
-                          }
+                            fontSize: 9,
+                          },
                         },
                         yAxis: {
                           type: "value",
                           axisLabel: {
-                            fontSize: 9, 
-                          }
+                            fontSize: 9,
+                          },
                         },
                         series: [
                           {
@@ -292,159 +280,161 @@ for (let i = 0; i < 5; ++i) {
 
                   <div className="bg-white w-[36%] h-[175px] rounded-md">
                     <Chart
-                    option={{
-                      title:{
-                        text:'營收$4090億',
-                        subtext:'',
-                        textStyle: {
-                          fontSize: 12, 
+                      option={{
+                        title: {
+                          text: "營收$4090億",
+                          subtext: "",
+                          textStyle: {
+                            fontSize: 12,
+                          },
+                          subtextStyle: {
+                            fontSize: 10,
+                          },
                         },
-                        subtextStyle: {
-                          fontSize: 10, 
-                        }
-                      },
-                      grid:{left:'20%',top:'25%',height:'60%'},
-                      xAxis: {
-                        type: 'category',
-                        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-                        axisLabel: {
-                          fontSize: 9, 
-                        }
-                      },
-                      yAxis: {
-                        type: 'value',
-                        axisLabel: {
-                          fontSize: 9, 
-                        }
-                      },
-                      series: [
-                        {
-                          data: [120, 200, 150, 80, 70],
-                          type: 'bar'
-                        }
-                    ]
-                    }}/>
-                  
-                </div></div>
+                        grid: { left: "20%", top: "25%", height: "60%" },
+                        xAxis: {
+                          type: "category",
+                          data: ["Mon", "Tue", "Wed", "Thu", "Fri"],
+                          axisLabel: {
+                            fontSize: 9,
+                          },
+                        },
+                        yAxis: {
+                          type: "value",
+                          axisLabel: {
+                            fontSize: 9,
+                          },
+                        },
+                        series: [
+                          {
+                            data: [120, 200, 150, 80, 70],
+                            type: "bar",
+                          },
+                        ],
+                      }}
+                    />
+                  </div>
+                </div>
 
                 <div className="flex justify-between mt-2">
                   <div className="bg-white w-[32%] h-[175px] rounded-md p-2">
-                  <Chart
-                    option={{
-                      title:{
-                        text:'$4090億資本支出',
-                        itemGap:'1',
-                        textStyle: {
-                          fontSize: 12, 
-                        },
-                        subtextStyle: {
-                          fontSize: 10, 
-                        }
-                      },
-                      grid:{left:'20%',top:'25%',height:'60%'},
-                      xAxis: {
-                      type: 'category',
-                      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-                      axisLabel: {
-                        fontSize: 9, 
-                      }
-                    },
-                    yAxis: {
-                      type: 'value',
-                      axisLabel: {
-                        fontSize: 9, 
-                      }
-                    },
-                    series: [
-                      {
-                        data: [120, 200, 150, 80, 70],
-                        type: 'bar'
-                      }
-                    ]
-                    }}/>
-                  </div>
-                  <div className="bg-white w-[32%] h-[175px] rounded-md">
                     <Chart
-                    option={{
-                      title: {
-                        text: '產業分析',
-                        left: 'center',
-                        textStyle: {
-                          fontSize: 12, 
+                      option={{
+                        title: {
+                          text: "$4090億資本支出",
+                          itemGap: "1",
+                          textStyle: {
+                            fontSize: 12,
+                          },
+                          subtextStyle: {
+                            fontSize: 10,
+                          },
                         },
-                        subtextStyle: {
-                          fontSize: 10, 
-                        }
-                      },
-                      grid:{top:'60',height:'500'},
-                      
-                      tooltip: {
-                        trigger: 'item'
-                      },
-                      series: [
-                        {
-                          name: 'Pie',
-                          type: 'pie',
-                          radius: '50%',
-                          data: [
-                            { value: 1048, name: 'Search Engine' },
-                            { value: 735, name: 'Direct' },
-                            { value: 580, name: 'Email' },
-                            { value: 484, name: 'Union Ads' },
-                            { value: 300, name: 'Video Ads' }
-                          ],
-                          emphasis: {
-                            itemStyle: {
-                              shadowBlur: 10,
-                              shadowOffsetX: 0,
-                              shadowColor: 'rgba(0, 0, 0, 0.5)'
-                            }
-                          }
-                        }
-                      ]
-                    }}
+                        grid: { left: "20%", top: "25%", height: "60%" },
+                        xAxis: {
+                          type: "category",
+                          data: ["Mon", "Tue", "Wed", "Thu", "Fri"],
+                          axisLabel: {
+                            fontSize: 9,
+                          },
+                        },
+                        yAxis: {
+                          type: "value",
+                          axisLabel: {
+                            fontSize: 9,
+                          },
+                        },
+                        series: [
+                          {
+                            data: [120, 200, 150, 80, 70],
+                            type: "bar",
+                          },
+                        ],
+                      }}
                     />
                   </div>
                   <div className="bg-white w-[32%] h-[175px] rounded-md">
                     <Chart
-                    option={{
-                      title: {
-                        text: '營收占比',
-                        left: 'center',
-                        textStyle: {
-                          fontSize: 12, 
+                      option={{
+                        title: {
+                          text: "產業分析",
+                          left: "center",
+                          textStyle: {
+                            fontSize: 12,
+                          },
+                          subtextStyle: {
+                            fontSize: 10,
+                          },
                         },
-                        subtextStyle: {
-                          fontSize: 10, 
-                        }
-                      },
-                      grid:{top:'60',height:'500'},
-                      
-                      tooltip: {
-                        trigger: 'item'
-                      },
-                      series: [
-                        {
-                          name: 'Pie',
-                          type: 'pie',
-                          radius: '50%',
-                          data: [
-                            { value: 1048, name: 'Search Engine' },
-                            { value: 735, name: 'Direct' },
-                            { value: 580, name: 'Email' },
-                            { value: 484, name: 'Union Ads' },
-                            { value: 300, name: 'Video Ads' }
-                          ],
-                          emphasis: {
-                            itemStyle: {
-                              shadowBlur: 10,
-                              shadowOffsetX: 0,
-                              shadowColor: 'rgba(0, 0, 0, 0.5)'
-                            }
-                          }
-                        }
-                      ]
-                    }}
+                        grid: { top: "60", height: "500" },
+
+                        tooltip: {
+                          trigger: "item",
+                        },
+                        series: [
+                          {
+                            name: "Pie",
+                            type: "pie",
+                            radius: "50%",
+                            data: [
+                              { value: 1048, name: "Search Engine" },
+                              { value: 735, name: "Direct" },
+                              { value: 580, name: "Email" },
+                              { value: 484, name: "Union Ads" },
+                              { value: 300, name: "Video Ads" },
+                            ],
+                            emphasis: {
+                              itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: "rgba(0, 0, 0, 0.5)",
+                              },
+                            },
+                          },
+                        ],
+                      }}
+                    />
+                  </div>
+                  <div className="bg-white w-[32%] h-[175px] rounded-md">
+                    <Chart
+                      option={{
+                        title: {
+                          text: "營收占比",
+                          left: "center",
+                          textStyle: {
+                            fontSize: 12,
+                          },
+                          subtextStyle: {
+                            fontSize: 10,
+                          },
+                        },
+                        grid: { top: "60", height: "500" },
+
+                        tooltip: {
+                          trigger: "item",
+                        },
+                        series: [
+                          {
+                            name: "Pie",
+                            type: "pie",
+                            radius: "50%",
+                            data: [
+                              { value: 1048, name: "Search Engine" },
+                              { value: 735, name: "Direct" },
+                              { value: 580, name: "Email" },
+                              { value: 484, name: "Union Ads" },
+                              { value: 300, name: "Video Ads" },
+                            ],
+                            emphasis: {
+                              itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: "rgba(0, 0, 0, 0.5)",
+                              },
+                            },
+                          },
+                        ],
+                      }}
                     />
                   </div>
                 </div>
@@ -455,38 +445,38 @@ for (let i = 0; i < 5; ++i) {
                       option={{
                         series: [
                           {
-                            type: 'gauge',
+                            type: "gauge",
                             progress: {
                               show: true,
-                              width: 18
+                              width: 18,
                             },
                             axisLine: {
                               lineStyle: {
-                                width: 18
-                              }
+                                width: 18,
+                              },
                             },
                             axisTick: {
-                              show: false
+                              show: false,
                             },
                             splitLine: {
                               length: 15,
                               lineStyle: {
                                 width: 2,
-                                color: '#999'
-                              }
+                                color: "#999",
+                              },
                             },
                             axisLabel: {
                               distance: 25,
-                              color: '#999',
-                              fontSize: 5
+                              color: "#999",
+                              fontSize: 5,
                             },
                             anchor: {
                               show: true,
                               showAbove: true,
                               size: 10,
                               itemStyle: {
-                                borderWidth: 10
-                              }
+                                borderWidth: 10,
+                              },
                             },
                             title: {
                               show: false,
@@ -494,15 +484,15 @@ for (let i = 0; i < 5; ++i) {
                             detail: {
                               valueAnimation: true,
                               fontSize: 10,
-                              offsetCenter: [0, '70%']
+                              offsetCenter: [0, "70%"],
                             },
                             data: [
                               {
-                                value: 70
-                              }
-                            ]
-                          }
-                        ]
+                                value: 70,
+                              },
+                            ],
+                          },
+                        ],
                       }}
                     />
                   </div>
@@ -625,21 +615,21 @@ for (let i = 0; i < 5; ++i) {
                       src="sun-emoji.png"
                       className="w-[30px] h-[30px]"
                     ></img>
-                    正向
+                    科技
                   </div>
                   <div className="flex items-center text-xs mx-1">
                     <img
                       src="partly-cloudy-day--v1.png"
                       className="w-[30px] h-[30px]"
                     ></img>
-                    中立
+                    能源
                   </div>
                   <div className="flex items-center text-xs ml-1">
                     <img
                       src="external-rainny-spring-filled-outline-lima-studio.png"
                       className="w-[30px] h-[30px]"
                     ></img>
-                    保守
+                    礦業
                   </div>
                 </div>
 
