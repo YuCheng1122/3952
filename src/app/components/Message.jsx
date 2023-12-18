@@ -4,12 +4,13 @@ import React from "react";
 
 const Message = ({ text, isUser }) => {
   return (
-    <div style={{ textAlign: isUser ? "right" : "left", margin: "8px" }}>
+    <div style={{ textAlign: isUser ? "left" : "right", marginTop: "5px", marginBottom:"5px" }}>
       <div
         style={{
-          backgroundColor: isUser ? "#DCF8C6" : "#b8e3fc",
+          backgroundColor: isUser ? "#f0f0f0" : "#b8e3fc" ,
           padding: "8px",
           borderRadius: "8px",
+          fontSize:'12px'
         }}
       >
         {text}

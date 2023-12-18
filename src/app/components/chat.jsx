@@ -86,11 +86,7 @@ const Chat = () => {
         </Grid>
         <Grid item>
           <Button
-            variant="contained"
-            color="primary"
-            onClick={handleSendMessage}
-            disabled={isLoading}
-          >
+            className='bg-blue-300 font-medium' onClick={handleSendMessage}disabled={isLoading}>
             Send
           </Button>
         </Grid>

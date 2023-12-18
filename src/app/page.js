@@ -167,12 +167,12 @@ const Index = () => {
             </div>
             {/* 焦點議題 */}
             <div className="flex flex-col items-center w-full my-2"></div>
-            <header className="App-header">
-              <h1 style={{ textAlign: "center" }}>投資機器人</h1>
-            </header>
+              <div className="text-white text-base font-semibold mb-2">投資機器人</div>
+              <div className="py-2 bg-white w-full rounded-md"></div>
             <Chat />
           </div>
         </div>
+        
 
         {/* right */}
         <div className="w-[55%] flex justify-center">
