@@ -192,7 +192,7 @@ const Index = () => {
               {/* left */}
               <div className="w-[60%] p-1 mt-2">
                 <div className="flex justify-between items-center mt-5">
-                  <div className="text-black text-sm">台積電2330 23Q2</div>
+                  <div className="text-black text-sm">玉山金2884 2022Q4</div>
                   <input
                     type="text"
                     className="rounded-md max-w-[150px] max-h-[20px] px-1"
@@ -227,8 +227,8 @@ const Index = () => {
                       option={{
                         grid: { top: "25%", height: "60%" },
                         title: {
-                          text: "EPS $7.01",
-                          subtext: "2022-01-01",
+                          text: "EPS $1.1",
+                          subtext: "2022-12-31",
                           left: "center",
                           itemGap: 3,
                           textStyle: {
@@ -249,13 +249,13 @@ const Index = () => {
                         xAxis: {
                           type: "category",
                           data: [
-                            "Mon",
-                            "Tue",
-                            "Wed",
-                            "Thu",
-                            "Fri",
-                            "Sat",
-                            "Sun",
+                            "2016",
+                            "2017",
+                            "2018",
+                            "2019",
+                            "2020",
+                            "2021",
+                            "2022",
                           ],
                           axisLabel: {
                             fontSize: 9,
@@ -269,7 +269,7 @@ const Index = () => {
                         },
                         series: [
                           {
-                            data: [150, 230, 224, 218, 135, 147, 260],
+                            data: [1.4, 1.4, 1.47, 1.6, 1.35, 1.44, 1.1],
                             type: "line",
                             lineStyle: { color: "#d5ceeb" },
                             smooth: true,
@@ -283,7 +283,7 @@ const Index = () => {
                     <Chart
                       option={{
                         title: {
-                          text: "營收$4090億",
+                          text: "營收$548億",
                           subtext: "",
                           textStyle: {
                             fontSize: 12,
@@ -295,7 +295,7 @@ const Index = () => {
                         grid: { left: "20%", top: "25%", height: "60%" },
                         xAxis: {
                           type: "category",
-                          data: ["Mon", "Tue", "Wed", "Thu", "Fri"],
+                          data: ["2018", "2019", "2020", "2021", "2022"],
                           axisLabel: {
                             fontSize: 9,
                           },
@@ -308,7 +308,7 @@ const Index = () => {
                         },
                         series: [
                           {
-                            data: [120, 200, 150, 80, 70],
+                            data: [494, 545, 562, 578, 548],
                             type: "bar",
                           },
                         ],
@@ -322,7 +322,7 @@ const Index = () => {
                     <Chart
                       option={{
                         title: {
-                          text: "$4090億資本支出",
+                          text: "$70億資本支出",
                           itemGap: "1",
                           textStyle: {
                             fontSize: 12,
@@ -334,7 +334,7 @@ const Index = () => {
                         grid: { left: "20%", top: "25%", height: "60%" },
                         xAxis: {
                           type: "category",
-                          data: ["Mon", "Tue", "Wed", "Thu", "Fri"],
+                          data: ["2018", "2019", "2020", "2021", "2022"],
                           axisLabel: {
                             fontSize: 9,
                           },
